@@ -1,0 +1,299 @@
+/* ---------------------------------------------
+   DEKK GOLD MINER – REGISTER STYLES
+   Modern, gold-accented, responsive
+--------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at 20% 30%, #1e3c32, #0a1c1a);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 20px;
+  margin: 0;
+}
+
+/* fallback font if Inter not available */
+@supports not (font-family: 'Inter') {
+  body { font-family: 'Segoe UI', Roboto, sans-serif; }
+}
+
+/* Main card – glassmorphism with gold trim */
+.register-container {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  border-radius: 40px;
+  box-shadow: 0 30px 45px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(212, 175, 55, 0.3);
+  padding: 2.2rem 2rem 2.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  transition: all 0.2s;
+}
+
+/* Logo section */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.logo img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 0 0 3px #d4af37;
+  background: #10231e;
+  padding: 5px;
+}
+.logo h1 {
+  margin-top: 12px;
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(145deg, #c9a227, #ffea9b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Form headings */
+form h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1e3c32;
+  margin-bottom: 4px;
+}
+form > p {
+  color: #5f6c7a;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-left: 4px solid #d4af37;
+  padding-left: 14px;
+}
+
+/* Input groups */
+.input-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #1e3c32;
+  letter-spacing: 0.2px;
+}
+input, select {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 1.5px solid #dde3e8;
+  border-radius: 20px;
+  background: #ffffff;
+  transition: all 0.2s;
+  font-family: inherit;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+input:focus, select:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15), inset 0 1px 3px #fff;
+}
+
+/* Name fields side by side */
+.name-fields {
+  display: flex;
+  gap: 16px;
+}
+.name-fields .input-group {
+  flex: 1;
+}
+
+/* Mobile row */
+.mobile-input {
+  display: flex;
+  gap: 10px;
+}
+.mobile-input select {
+  width: 120px;
+  padding: 14px 8px;
+  background: #f9fbfc;
+  font-weight: 500;
+}
+.mobile-input input {
+  flex: 1;
+}
+
+/* Password container with toggle */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.password-container input {
+  padding-right: 55px;
+}
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #4a5c68;
+  padding: 4px 8px;
+  border-radius: 30px;
+  transition: background 0.2s;
+}
+.toggle-password:hover {
+  background: #eef2f5;
+  color: #1e3c32;
+}
+
+/* Password hint */
+.hint-text {
+  font-size: 0.75rem;
+  color: #5f6c7a;
+  margin-top: 6px;
+  padding-left: 4px;
+}
+
+/* Error messages */
+.error-message {
+  color: #d32f2f;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  min-height: 18px;
+  font-weight: 500;
+  padding-left: 8px;
+}
+.global-error {
+  text-align: center;
+  margin: 16px 0 8px;
+  background: #ffebee;
+  padding: 10px 16px;
+  border-radius: 40px;
+  border-left: 4px solid #b71c1c;
+}
+
+/* Terms checkbox */
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 16px;
+}
+.terms input {
+  width: 20px;
+  height: 20px;
+  accent-color: #d4af37;
+  margin: 0;
+  box-shadow: none;
+}
+.terms label {
+  margin: 0;
+  font-weight: 500;
+}
+.terms a {
+  color: #b8860b;
+  text-decoration: none;
+  font-weight: 600;
+}
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Submit button */
+.register-btn {
+  width: 100%;
+  padding: 16px 20px;
+  background: linear-gradient(145deg, #c9a227, #b68b1c);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(180, 130, 20, 0.3);
+  transition: all 0.2s;
+  border: 1px solid #e6c468;
+  letter-spacing: 0.3px;
+}
+.register-btn:hover {
+  background: linear-gradient(145deg, #dbb442, #c9a227);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(180, 130, 20, 0.4);
+}
+.register-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 24px;
+  color: #2e4d41;
+}
+.login-link a {
+  color: #b8860b;
+  font-weight: 700;
+  text-decoration: none;
+}
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Payment container styling */
+#payment-container {
+  text-align: center;
+}
+#payment-container h3 {
+  color: #1e3c32;
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  background: #e9f2e8;
+  padding: 14px;
+  border-radius: 40px;
+  border: 1px solid #d4af37;
+}
+#payment-container iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 24px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background: #f5f7f9;
+}
+.payment-note {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #3d5a4d;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .register-container {
+    padding: 1.5rem;
+  }
+  .name-fields {
+    flex-direction: column;
+    gap: 0;
+  }
+  .mobile-input {
+    flex-direction: column;
+  }
+  .mobile-input select {
+    width: 100%;
+  }
+}

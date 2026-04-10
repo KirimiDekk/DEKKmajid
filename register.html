@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Register · Dekk Gold Miner</title>
+  <!-- Favicon (update path if needed) -->
+  <link rel="icon" href="img/icon2.jpg">
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+  <div class="register-container">
+    <div class="logo">
+      <img src="img/main-logo.jpg" alt="Dekk Gold Miner Logo" width="100" height="100">
+      <h1>Dekk Gold Miner</h1>
+    </div>
+
+    <!-- Registration Form – visible by default -->
+    <form id="registrationForm" novalidate>
+      <h2>Register</h2>
+      <p>Create New Account</p>
+
+      <div class="name-fields">
+        <div class="input-group" id="firstNameGroup">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="Enter first name" autocomplete="given-name">
+          <div class="error-message" id="firstNameError"></div>
+        </div>
+        <div class="input-group" id="lastNameGroup">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Enter last name" autocomplete="family-name">
+          <div class="error-message" id="lastNameError"></div>
+        </div>
+      </div>
+
+      <div class="input-group" id="userNameGroup">
+        <label for="userName">Username</label>
+        <input type="text" id="userName" placeholder="Enter Username" autocomplete="username">
+        <div class="error-message" id="userNameError"></div>
+      </div>
+
+      <div class="input-group" id="mobileGroup">
+        <label for="mobile">Mobile Number</label>
+        <div class="mobile-input">
+          <select id="countryCode" required>
+            <option value="+254">🇰🇪 +254</option>
+            <option value="+1">🇺🇸 +1</option>
+            <option value="+44">🇬🇧 +44</option>
+            <option value="+234">🇳🇬 +234</option>
+          </select>
+          <input type="tel" id="mobile" placeholder="712345678" autocomplete="tel">
+        </div>
+        <div class="error-message" id="mobileError"></div>
+      </div>
+
+      <div class="input-group" id="emailGroup">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+        <div class="error-message" id="emailError"></div>
+      </div>
+
+      <div class="password-fields">
+        <div class="input-group" id="passwordGroup">
+          <label for="password">Password</label>
+          <div class="password-container">
+            <input type="password" id="password" placeholder="••••••••" autocomplete="new-password">
+            <button type="button" class="toggle-password" data-target="password">👁️</button>
+          </div>
+          <div class="error-message" id="passwordError"></div>
+          <div class="hint-text">Min 8 chars, 1 uppercase, 1 number & 1 special</div>
+        </div>
+        <div class="input-group" id="confirmPasswordGroup">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="password-container">
+            <input type="password" id="confirmPassword" placeholder="••••••••" autocomplete="off">
+            <button type="button" class="toggle-password" data-target="confirmPassword">👁️</button>
+          </div>
+          <div class="error-message" id="confirmPasswordError"></div>
+        </div>
+      </div>
+
+      <div class="input-group" id="countryGroup">
+        <label for="country">Country</label>
+        <select id="country" required>
+          <option value="Kenya">Kenya</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Nigeria">Nigeria</option>
+          <option value="United States">United States</option>
+        </select>
+        <div class="error-message" id="countryError"></div>
+      </div>
+
+      <div class="terms" id="termsGroup">
+        <input type="checkbox" id="terms">
+        <label for="terms">I Agree to the <a href="terms.html" target="_blank">Terms and Conditions</a></label>
+        <div class="error-message" id="termsError"></div>
+      </div>
+
+      <button type="submit" class="register-btn" id="submitBtn">Create Account</button>
+      <p class="login-link">Already have an Account? <a href="login.html">Login</a></p>
+      <div id="global-message" class="error-message global-error" style="display: none;"></div>
+    </form>
+
+    <!-- Payment Container (hidden until successful registration) -->
+    <div id="payment-container" style="display: none;">
+      <h3>✅ Registration successful! Complete payment to activate</h3>
+      <!--<iframe 
+  src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/geminer&email=customer@example.com&phone=254712345678&amount=1000&currency=KES"
+  title="Pesapal Payment Gateway"
+  sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation"
+  loading="lazy">
+</iframe>-->
+      <!--<iframe 
+  src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/geminer&firstName=John&lastName=Doe&email=john@example.com&phone=254712345678"
+  title="Pesapal Payment Gateway"
+  sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation"
+  loading="lazy">
+</iframe>-->
+      <iframe 
+        src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/geminer"
+        title="Pesapal Payment Gateway"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation"
+        loading="lazy">
+      </iframe>
+      <p class="payment-note">After payment, your account will be activated within minutes.</p>
+    </div>
+  </div>
+
+  <!-- Link to external JavaScript -->
+  <script src="js/register.js"></script>
+</body>
+</html>

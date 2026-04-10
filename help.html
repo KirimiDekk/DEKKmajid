@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Help Center | Dekk Gold Miner</title> <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f8fafc; color: #1e293b; transition: 0.2s; }
+    :root { --bg-body: #f8fafc; --bg-surface: #ffffff; --text-primary: #1e293b; --text-secondary: #475569; --border: #e2e8f0; --accent: #f59e0b; }
+    body.dark { --bg-body: #0f172a; --bg-surface: #1e293b; --text-primary: #f1f5f9; --text-secondary: #cbd5e1; --border: #334155; }
+    body { background: var(--bg-body); color: var(--text-primary); }
+    header { background: #0f172a; color: white; padding: 0.75rem 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .header-actions { display: flex; gap: 1rem; align-items: center; }
+    .theme-toggle-btn, .notification-btn, .logout-btn { background: #1e293b; border: none; padding: 0.5rem 1rem; border-radius: 40px; cursor: pointer; color: white; transition: 0.2s; }
+    .theme-toggle-btn:hover, .notification-btn:hover, .logout-btn:hover { background: #f59e0b; color: #0f172a; }
+    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; background: #1e293b; padding: 0.3rem 0.8rem; border-radius: 12px; color: #f59e0b; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+    .nav-links li a { color: #e2e8f0; text-decoration: none; padding: 0.5rem 1rem; border-radius: 30px; transition: 0.2s; }
+    .nav-links li a:hover { background: #f59e0b; color: #0f172a; }
+    .logo { text-align: center; padding: 2rem 1rem; background: linear-gradient(135deg, #fef9e3, #fff); }
+    body.dark .logo { background: #0f172a; }
+    .head { font-size: 2.2rem; color: #b45309; }
+    body.dark .head { color: #f59e0b; }
+    section { max-width: 1280px; margin: 2rem auto; padding: 2rem; background: var(--bg-surface); border-radius: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    h2 { font-size: 1.8rem; margin: 1.5rem 0 1rem; border-left: 5px solid #f59e0b; padding-left: 1rem; color: var(--text-primary); }
+    h3 { margin: 1rem 0 0.5rem; color: var(--accent); }
+    p, li { color: var(--text-secondary); line-height: 1.6; margin: 0.8rem 0; }
+    ul, ol { margin-left: 1.5rem; }
+    .stats-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .stat-card { background: var(--bg-body); padding: 1rem; border-radius: 20px; text-align: center; flex: 1; }
+    .stat-number { font-size: 2rem; font-weight: bold; color: var(--accent); }
+    .main-footer { background: #0f172a; color: #cbd5e1; padding: 2rem; text-align: center; margin-top: 2rem; }
+    @media (max-width: 768px) { .menu-icon { display: inline-block; } .nav-links { display: none; flex-direction: column; background: #1e293b; padding: 1rem; border-radius: 20px; } .nav-links.show-mobile { display: flex; } header { flex-direction: column; align-items: stretch; } }
+  </style></head>
+<body><header><div class="header-actions">
+    <button class="theme-toggle-btn" id="themeToggleBtn">🌙</button>
+    <button class="notification-btn" id="notificationBtn">🔔</button>
+    <button class="logout-btn" id="logoutBtn">Logout</button>
+  </div>
+  <nav>
+    <div class="menu-icon" id="mobileMenuIcon">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li>
+      <li><a href="terms.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="disclaimer.html">Disclaimer</a></li>
+    </ul>
+  </nav></header>
+<div class="logo"><h1 class="head">Help Center</h1></div>
+<section>
+  <h2>📘 Getting Started</h2>
+  <p><strong>1. Registration</strong> – Click "Create Account", verify your email, and complete your profile. You'll receive a 100 GOLD welcome bonus.</p>
+  <p><strong>2. Earning Methods</strong> – Explore the "Earn" tab. You'll find video tasks, daily quizzes, spin wheel, referrals, and ad offers. Each method shows expected payout.</p>
+  <p><strong>3. Withdrawals</strong> – Once you reach 1,000 GOLD (≈ $10), go to Wallet → Withdraw. Choose M-Pesa, PayPal, or crypto (USDT). Standard withdrawals are free and take up to 24h.</p>
+  
+  <h2>🔧 Troubleshooting</h2>
+  <p><strong>❌ Task not crediting?</strong> – Clear cache, ensure you're using the latest browser version. If problem persists, contact support with screenshot.</p>
+  <p><strong>⏳ Withdrawal pending for >24h?</strong> – Check your email for verification requests. Sometimes we need ID verification for large amounts (>5,000 GOLD).</p>
+  <p><strong>🔑 Forgot password?</strong> – Use "Forgot password" on login page. Reset link expires in 1 hour.</p>
+  
+  <h2>🎓 Video Tutorials</h2>
+  <p>📹 <a href="#">How to maximize daily earnings (5 min)</a><br>
+  📹 <a href="#">Referral system explained (3 min)</a><br>
+  📹 <a href="#">How to withdraw to M-Pesa (2 min)</a></p>
+  
+  <h2>📞 Still need help?</h2>
+  <p>Live chat is available 9am-9pm EAT (button bottom-right). Or email <strong>support@dekkgold.com</strong> – we reply within 12 hours.</p>
+</section>
+<footer class="main-footer">
+  <p>⚡ Dekk Gold Miner – Mine Real Value. Withdraw Instantly.</p>
+  <p style="margin-top:0.5rem; font-size:0.8rem;">&copy; 2025 Dekk Gold Miner. All rights reserved.</p>
+</footer>
+<script> (function(){
+    // Dark mode
+    const themeToggle = document.getElementById('themeToggleBtn');
+    if(localStorage.getItem('dekkTheme') === 'dark'){
+      document.body.classList.add('dark');
+      themeToggle.innerHTML = '☀️';
+    }
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('dekkTheme', isDark ? 'dark' : 'light');
+      themeToggle.innerHTML = isDark ? '☀️' : '🌙';
+    });
+    // Mobile menu
+    const menuIcon = document.getElementById('mobileMenuIcon');
+    const navLinks = document.getElementById('navLinks');
+    if(menuIcon && navLinks){
+      menuIcon.addEventListener('click', () => navLinks.classList.toggle('show-mobile'));
+    }
+    // Logout demo
+    const logoutBtn = document.getElementById('logoutBtn');
+    if(logoutBtn){
+      logoutBtn.addEventListener('click', () => {
+        if(confirm('Logout from Dekk Gold Miner?')) window.location.href = 'login.html';
+      });
+    }
+    // Notification demo
+    const notifBtn = document.getElementById('notificationBtn');
+    if(notifBtn){
+      notifBtn.addEventListener('click', () => alert('🔔 New: Your daily bonus is ready!'));
+    }
+  })();</script>
+</body>
+</html>
