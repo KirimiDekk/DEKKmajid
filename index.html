@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="author" content="Dekk Gold Miner">
+  <meta name="description" content="Dekk Gold Miner – Turn your spare time into real gold. Start mining, trading, and earning today with zero investment.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Dekk Gold Miner | Mine Real Value">
+  <meta property="og:description" content="Join 250,000+ users earning daily. Simple tasks, big rewards.">
+  <title>Dekk Gold Miner | Mine. Earn. Grow.</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="img/icon.jpg">
+  <meta name="csrf-token" content="demo_csrf_token_12345">
+</head>
+<body>
+  <!-- Utility containers -->
+  <div aria-live="polite" id="a11y-announcer" class="sr-only"></div>
+  <div id="offline-banner" class="offline-banner" style="display: none;">⚠️ You are offline. Some features may be unavailable.</div>
+  <div id="global-loader" class="global-loader" style="display: none;"><div class="loader-spinner"></div></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- FLOATING CTA BUTTON (always visible) -->
+  <a href="#" id="floatingCta" class="cta-button floating-cta">🎉 DOWNLOAD OUR APP🎉</a>
+
+  <!-- FLOATING TELEGRAM ICON -->
+  <a href="https://t.me/dekkminer" target="_blank" id="floatingTelegram" class="floating-telegram" aria-label="Join our Telegram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.6-1.38-.97-2.23-1.56-.99-.69-.35-1.07.22-1.69.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.12-.06-.17-.07-.05-.18-.03-.26-.02-.11.01-1.83 1.16-5.17 3.42-.49.34-.94.5-1.34.49-.44-.01-1.29-.25-1.92-.46-.77-.25-1.38-.38-1.33-.81.03-.22.33-.45.92-.68 3.59-1.56 5.99-2.59 7.19-3.08 3.43-1.42 4.14-1.66 4.6-1.67.1 0 .33.02.48.15.12.11.16.26.17.4-.01.11-.02.27-.04.45z"/>
+    </svg>
+  </a>
+
+  <header>
+    <div class="header-actions">
+      <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Dark/Light mode">🌙</button>
+      <button class="notification-btn" id="notificationToggleBtn" aria-label="Notifications" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22ZM18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z" fill="currentColor"/>
+        </svg>
+      </button>
+      <div id="notification-popup" class="hidden" role="dialog" aria-label="Notifications">
+        <ul>
+          <li>💰 You earned 0.05 GOLD from watching videos!</li>
+          <li>👥 Your referral just made their first deposit – +5% bonus!</li>
+          <li>⚡ New daily challenge: Double rewards for the next 2 hours!</li>
+        </ul>
+      </div>
+      <button class="logout-btn" id="logoutBtn" aria-label="Logout"><a href="login.html">Logout</a></button>
+    </div>
+    <nav>
+      <div class="menu-icon" id="mobileMenuIcon" aria-label="Menu" role="button" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="transaction.html">Transactions</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="logo">
+    <h1 class="head">Dekk Gold Miner</h1>
+    <img src="img/logo.jpg" alt="Dekk Gold Miner Logo" width="110" height="110">
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="dynamic-text-area">
+        <h2 id="dynamicH2" class="interactive-text" tabindex="0" role="button">⚡ Zero Investment. Real Gold.</h2>
+        <p id="dynamicP" class="interactive-text" tabindex="0" role="button">Start earning instantly – watch videos, complete tasks, and withdraw your gold daily.</p>
+        <div class="text-controls">
+          <button id="prevTextBtn" class="text-nav-btn">◀ Prev</button>
+          <button id="nextTextBtn" class="text-nav-btn">Next ▶</button>
+        </div>
+        <small class="hint">Click text or use buttons to see more offers</small>
+      </div>
+      <div class="button-group">
+        <button class="register-btn"><a href="register.html"><strong>Create Account ➜</strong></a></button>
+        <button class="login-btn"><a href="login.html"><strong>Login ➜</strong></a></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="earnings">
+    <h2>💎 4 Proven Ways to Earn Gold</h2>
+    <p>No investment needed – start earning from day one with these simple methods:</p>
+    <ul>
+      <li><strong>📱 Watch & Earn:</strong> Get paid for viewing short videos, ads, and promotions.</li>
+      <li><strong>👥 Referral Bonuses:</strong> Invite friends – earn 10% of their earnings for life.</li>
+      <li><strong>🏆 Daily Challenges:</strong> Complete fun tasks and claim bonus gold every 24h.</li>
+      <li><strong>🎁 Spin & Win:</strong> Free daily wheel spins – up to 500 GOLD instantly.</li>
+    </ul>
+  </section>
+
+  <section class="features">
+    <h2>🚀 Why 250,000+ Users Trust Dekk</h2>
+    <p>We've built the most rewarding mining platform – here's what makes us different:</p>
+    <ul>
+      <li>⚡ <strong>Instant Withdrawals:</strong> Get your gold in minutes, no hidden fees.</li>
+      <li>🛡️ <strong>100% Secure:</strong> Bank-grade encryption & fraud protection.</li>
+      <li>🌍 <strong>Global Community:</strong> Mine with users from 150+ countries.</li>
+      <li>📈 <strong>Daily Bonuses:</strong> Log in each day to claim increasing rewards.</li>
+    </ul>
+  </section>
+
+  <section class="milestones">
+    <h2>🏅 Your Success = Our Mission</h2>
+    <p>Every miner gets rewarded at every step:</p>
+    <ul>
+      <li>🌟 Unlock <strong>Bronze, Silver, Gold</strong> tiers – each adds +5% earnings.</li>
+      <li>🏆 Weekly leaderboards – top miners win exclusive gold prizes.</li>
+      <li>📜 Earn achievement badges and share them on social media.</li>
+    </ul>
+  </section>
+
+  <section class="tips">
+    <h2>🔥 Pro Tips to Maximize Your Gold</h2>
+    <p>Use these strategies to earn faster:</p>
+    <ul>
+      <li>💡 Complete the “Daily Streak” – 7 days in a row doubles your earnings.</li>
+      <li>📚 Watch our 2‑minute tutorial to unlock a 200 GOLD bonus.</li>
+      <li>🤝 Join our Telegram group for secret promo codes.</li>
+    </ul>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Start Mining Real Value?</h2>
+    <p>Join thousands of happy miners who already withdrew over $2.5 million in gold.</p>
+    <a href="register.html" class="cta-button">Claim Your Free Starter Pack →</a>
+    <h2>⚡ Instant Earning Methods</h2>
+    <div class="earning-method">
+      <div class="earning-box"><img src="img/video-icon.jpg" alt="Video" onerror="this.src='https://placehold.co/64x64?text=Video'"><h3>Video Tasks</h3><p>Earn 5-20 GOLD per video. Unlimited daily.</p></div>
+      <div class="earning-box"><img src="img/challenge-icon.jpg" alt="Challenges" onerror="this.src='https://placehold.co/64x64?text=Challenge'"><h3>Daily Quiz</h3><p>Answer 5 questions – win up to 100 GOLD.</p></div>
+      <div class="earning-box"><img src="img/referral-icon.jpg" alt="Referral" onerror="this.src='https://placehold.co/64x64?text=Referral'"><h3>Referral Link</h3><p>Share your unique code – earn 10% forever.</p></div>
+      <div class="earning-box"><img src="img/spin-icon.jpg" alt="Spin" onerror="this.src='https://placehold.co/64x64?text=Spin'"><h3>Lucky Spin</h3><p>Daily free spin – jackpot up to 5,000 GOLD.</p></div>
+      <div class="earning-box"><img src="img/trivia-icon.jpg" alt="Trivia" onerror="this.src='https://placehold.co/64x64?text=Trivia'"><h3>Trivia Arena</h3><p>Compete live – winners split 1,000 GOLD pot.</p></div>
+      <div class="earning-box"><img src="img/ad-icon.jpg" alt="Ads" onerror="this.src='https://placehold.co/64x64?text=Ads'"><h3>Click & Earn</h3><p>Explore partner offers – earn 50-500 GOLD each.</p></div>
+    </div>
+  </section>
+
+  <section id="overview" class="overview">
+    <h2>📊 Your Mining Dashboard</h2>
+    <div class="overview-cards">
+      <div class="card"><h3>Total Gold Mined</h3><p id="total-gold" data-target="538">0 KG</p></div>
+      <div class="card"><h3>Total Earnings</h3><p id="total-earnings" data-target="267500">KES 0</p></div>
+      <div class="card"><h3>Active Miners</h3><p id="active-miners" data-target="250000">0</p></div>
+      <div class="card"><h3>Recent Transactions</h3><p id="recent-transactions" data-target="1247">0</p></div>
+    </div>
+  </section>
+
+  <section class="core-features">
+    <div class="container">
+      <h2 class="section-title">🌟 Premium Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card"><i aria-hidden="true">⛏️</i><h3>Auto‑Miner Bot</h3><p>Upgrade to auto‑mining and earn while you sleep.</p></div>
+        <div class="feature-card"><i aria-hidden="true">📈</i><h3>Live Leaderboard</h3><p>Compete globally – top 100 win weekly bonuses.</p></div>
+        <div class="feature-card"><i aria-hidden="true">🔒</i><h3>Vault Protection</h3><p>Your gold is insured and withdrawable anytime.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" id="dynamicStatsSection">
+    <div class="container">
+      <div class="stat-grid" id="statGrid">
+        <div class="stat-item"><h3 id="stat1Value">250K+</h3><p id="stat1Label">Active Miners</p></div>
+        <div class="stat-item"><h3 id="stat2Value">$50M+</h3><p id="stat2Label">Gold Withdrawn</p></div>
+        <div class="stat-item"><h3 id="stat3Value">99.9%</h3><p id="stat3Label">Happy Users</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">💬 What Our Miners Say</h2>
+      <div class="testimonial-slider" id="testimonialSlider">
+        <div class="testimonial-card active"><p>"I never believed free mining could pay – but I've withdrawn over $500 already!"</p><p class="author">- James, Pro Miner</p></div>
+        <div class="testimonial-card"><p>"The referral program is insane. My team earns me passive gold every day."</p><p class="author">- Linda, Top Affiliate</p></div>
+        <div class="testimonial-card"><p>"Support answered in 2 minutes. Best platform I've ever used."</p><p class="author">- Mike, Verified User</p></div>
+      </div>
+      <div class="testimonial-nav" id="testimonialNav"></div>
+    </div>
+  </section>
+
+  <section class="innovative">
+    <h3>✨ New: AI‑Powered Mining Predictor</h3>
+    <p><b>Get personalized tips to increase your earnings by up to 300%.</b></p>
+    <ul>
+      <li>✔ <strong>Smart Dashboard:</strong> See your most profitable activities at a glance.</li>
+      <li>✔ <strong>Daily Push Notifications:</strong> Never miss a bonus opportunity.</li>
+      <li>✔ <strong>Community Chat:</strong> Share strategies and get help 24/7.</li>
+      <li>✔ <strong>Instant Payouts:</strong> Withdraw to mobile money, PayPal, or crypto.</li>
+    </ul>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand"><h2>⚡ Dekk Miner</h2><p>Start mining in 30 seconds – no deposit, no risk, just real gold.</p><div class="store-links"><a href="#">Google Play</a> | <a href="#">App Store</a></div></div>
+      <div class="footer-links"><h3>Company</h3><a href="about.html">About Us</a><a href="careers.html">Careers</a><a href="blog.html">Blog</a></div>
+      <div class="footer-links"><h3>Support</h3><a href="help.html">Help Center</a><a href="contact.html">Contact Us</a><a href="faq.html">FAQ</a></div>
+      <div class="footer-links"><h3>Legal</h3><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a></div>
+      <div class="footer-links"><h3>Connect</h3><a href="https://www.facebook.com/YOUR_PAGE_NAME" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Check out this great page!" data-url="https://www.your-website.com/page-to-share" data-show-count="false">Twitter</a><a href="https://www.instagram.com/YOUR_USERNAME/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://wa.me/0718713177" target="_blank">WhatsApp</a><a href="https://www.linkedin.com/company/YOUR_COMPANY_NAME" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.tiktok.com/@dekk_maj" target="_blank" rel="noopener noreferrer">TikTok</a>
+    </div>
+    </div>
+    <div class="footer-contact"><h3>📞 Get in Touch</h3><a href="contact.html">24/7 Live Support →</a></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
